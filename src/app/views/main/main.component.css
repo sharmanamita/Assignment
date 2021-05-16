@@ -1,0 +1,133 @@
+.container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  overflow: auto;
+  font-family: var(--fontFamily);
+}
+
+.sidebar{
+  width: 15%;
+  height: 100%;
+  top: 0;
+  padding: 10px;
+  position: absolute;
+  display: table-column;
+  border-right: 1px solid var(--colorDisabled);
+  background-color: #F1F1F1;
+}
+
+.navbar{
+  width: 78%;
+  height: 8%;
+  top: 0;
+  left: 18.5%;
+  padding: 10px;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  vertical-align: middle;
+  border-bottom:  var(--lengthSm1) solid #e9ecef !important;
+  background-color: white;
+}
+
+/* Middle Container */
+.content{
+  width: 78%;
+  height: 100%;
+  display: inline-block;
+  position: fixed;
+  left: 18.5%;
+  top: 11%;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: white;
+}
+
+/* ICONS */
+.fa{
+  font-size: 1.8rem;
+  line-height: 3rem;
+  background: transparent;
+  color: var(--colorText);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.fa:hover{
+  color: var(--bs4primary);
+  /* border-radius: 50%;s */
+}
+
+/* sidebar contents */
+.brand-name{
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 3.5rem;
+}
+
+.table>button, .btn{
+  width: 100px;
+  height: 100px;
+  display: block;
+  padding: 15px !important;
+  border: 2px solid var(--colorText);
+  border-radius:  20px;
+  background-color: white;
+}
+
+.table>button:hover, .btn:hover{
+  border-color: var(--bs4primary);
+}
+
+.table>button:focus, .btn:focus{
+  border-color: var(--bs4primary);
+}
+
+.table>button>.fa{
+  float: right;
+  font-size: small;
+}
+
+.table>button>.emoji{
+  font-size: 1.8rem;
+}
+
+label{
+  padding-bottom: 5px;
+  color: black;
+  font-size: var(--lengthMd2);
+  font-weight: bold;
+}
+
+
+.segment{
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  font-size: var(--lengthMd1);
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--bs4primary);
+  border: 2px solid var(--bs4primary);
+  color: white;
+  cursor: pointer;
+}
+
+.segment>.fa{
+  color: white;
+  
+}
+.segment>label{
+  color: white;
+}
+
+input{
+  width: 60%;
+  margin-top: 50px;
+  block-size: 15px;
+  border-radius: 10px;
+  border: 2px solid var(--colorLabel);
+  padding: 20px;
+}

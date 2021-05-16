@@ -1,0 +1,45 @@
+<div class="modal" [(style.display)]="visible">
+  <div class="content">
+    <span class="close" (click)="closeModal()">&times;</span><br>
+    <!-- <div><app-adddataform></app-adddataform></div> -->
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <div class="form-content onHover">
+        <div class="name">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" formControlName="name" /> 
+        </div>    
+     
+        <div class="icon">
+          <label for="icon">Icon</label>
+          <div class="emoji">
+            <ngx-emoji [emoji]="selectedEmoji" size="30"></ngx-emoji>
+            <button type="button" class="fa fa-chevron-down" (click)="openEmojiTab()"></button>
+          </div>
+          <emoji-mart (emojiSelect)="getEmoji($event)" *ngIf="isOpened"></emoji-mart>
+        </div>
+      
+        <div class="color" *ngIf="colorFlag">
+          <label for="color">Color</label>
+          <select id="color" name="color" formControlName="color">
+            <option *ngFor="let color of colorArr; let i=index" [ngValue]="color"
+              [style.background-color]="color">
+              Color {{i+1}}
+            </option>
+          </select>
+        </div>
+    
+        <div class="description" *ngIf="descrFlag">
+          <label for="description">Description</label>
+          <textarea rows="5" cols="50" formControlName="description"></textarea>  
+        </div>
+    
+        <div class="submit">
+          <button type="submit">Save</button>
+          <button type="button" (click)="closeModal()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
