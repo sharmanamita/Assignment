@@ -11,38 +11,36 @@
       <label style="line-height: 10px;">{{segment.seg_name}}</label>
     </div>
     <br>
-    <div style="vertical-align: bottom;">
+    <div style="position: absolute; bottom: 10%;">
       <button type="button" class="segment" (click)="openModel('segment')">
-        <i class="fa fa-plus" ></i><label>Add Segment</label>
+        <i class="icon fa fa-plus" ></i><label>Add Segment</label>
       </button>
     </div>
   </div>
 
   <!-- Navbar -->
   <div class="navbar">
-      <i class="fa fa-bell"></i>
-      <i class="fa fa-list-alt"></i>
-      <i class="fa fa-graduation-cap"></i>
-      <i class="fa fa-soundcloud"></i>
-      <i class="fa fa-gift"></i>
+      <i class="icon fa fa-bell"></i>
+      <i class="icon fa fa-list-alt"></i>
+      <i class="icon fa fa-graduation-cap"></i>
+      <i class="icon fa fa-soundcloud"></i>
+      <i class="icon fa fa-gift"></i>
   </div>
 
   <!-- Content -->
   <div class="content">
     <ng-template DataForm></ng-template>
-    <div style="display: flex; margin-left: 15px;">
+    <div style="display: flex; flex-wrap: wrap;">
       <div *ngFor="let table of tableData">
-        <div class="table">
+        <div class="content-box">
           <button type="button" [style.border-color]="table.color">
             <i class="fa fa-circle" [style.color]="table.color"></i>
-            <ngx-emoji class="emoji" [emoji]="table.icon" size="30"></ngx-emoji>
+            <ngx-emoji class="emoji" [emoji]="table.icon" size="50"></ngx-emoji>
           </button>
           <label>{{table.tbl_name}}</label>
-
         </div>
       </div>
       <button type="button" class="btn" (click)="openModel('table')"><i class="fa fa-plus"></i></button>
     </div>
-    
   </div>
 </div>
